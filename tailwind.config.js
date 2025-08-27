@@ -1,28 +1,37 @@
 /** @type {import('tailwindcss').Config} */
+import twShades from 'tw-color-shades';
+import colors from 'tailwindcss/colors';
+
 export default {
   content: [
-    './index.html',
-    './src/**/*.{ts,tsx}',
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}", // matches your src files
   ],
   theme: {
     extend: {
-      container: { center: true, padding: '1rem' },
       colors: {
-        brand: {
-          50: '#f2f8ff',
-          100: '#e6f0ff',
-          200: '#cce0ff',
-          300: '#99c2ff',
-          400: '#66a3ff',
-          500: '#3385ff',
-          600: '#0066ff',
-          700: '#0052cc',
-          800: '#003d99',
-          900: '#002966',
+        ...colors,
+        primary: twShades('#3498db'),
+        secondary: twShades("#F43F5E"),
+        Gray: twShades("#4B5563"),
+        
+      },
+      animation: {
+        'spin-slow': 'spin 4s linear infinite',
+        fly: 'fly 1s linear infinite',
+      },
+      keyframes: {
+        fly: {
+          '0%': {
+            transform: 'translate(0, 0) scale(1)',
+            opacity: '1',
+          },
+          '100%': {
+            transform: 'translate(60px, -60px) scale(0.5)',
+            opacity: '0',
+          },
         },
       },
-      boxShadow: { soft: '0 6px 24px rgba(0,0,0,0.06)' },
-      borderRadius: { xl2: '1.25rem' }
     },
   },
   plugins: [],
