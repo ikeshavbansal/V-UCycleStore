@@ -3,7 +3,7 @@ import main_logo from '../../assets/main-logo.png'
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between px-4 bg-black">
+    <header className="flex items-center justify-between px-4 bg-black z-10 fixed inset-0 h-20">
       {/* Left: Logo */}
       <div className="flex items-center">
         <img
@@ -15,9 +15,10 @@ const Header = () => {
       </div>
 
       {/* Center: Slide Tabs */}
-      <div className="flex-1 flex justify-center">
+      <div className="hidden md:flex flex-1 justify-center">
         <SlideTabsExample />
       </div>
+
 
       {/* Right: placeholder (optional) */}
       <div className="w-10" /> 
